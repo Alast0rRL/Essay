@@ -6,7 +6,7 @@ from telegram.ext import ConversationHandler, MessageHandler, filters
 
 from gpt import clear_history, push_message, get_start_message, set_provider, default_provider
 
-start_markup = ReplyKeyboardMarkup([['/dice', '/timer']], one_time_keyboard=False, resize_keyboard=True)
+start_markup = ReplyKeyboardMarkup([[]], one_time_keyboard=False, resize_keyboard=True)
 
 
 async def start_command(update, context):
@@ -21,7 +21,7 @@ async def start_command(update, context):
 
 
 async def help_command(update, context):
-    await update.message.reply_text("Я просто чат с Тамерланом")
+    await update.message.reply_text("Я просто бот Шурале")
 
 
 async def time_command(update, context):

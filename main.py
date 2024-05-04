@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 
 def get_start_message(user):
-    return rf"Привет @{user.username}! Я бот Тамерлана. Я отправляю все сообщения Тамерлану, а он своими руками печает ответы."
+    return rf"Привет @{user.username}! Я бот Шурале(Регина, это кринж...). Я напишу за тебя сочинение!"
 
 
 async def communicate(update: Update, context):
@@ -42,12 +42,6 @@ def main():
                             fallbacks=[]))
     application.add_handler(CommandHandler("start", start_command))
     application.add_handler(CommandHandler("help", help_command))
-    application.add_handler(CommandHandler("time", time_command))
-    application.add_handler(CommandHandler("date", date_command))
-    application.add_handler(CommandHandler("set_timer", set_timer_command))
-    application.add_handler(CommandHandler("unset_timer", unset_timer_command))
-    application.add_handler(CommandHandler("new_dialog", new_dialog_command))
-    application.add_handler(CommandHandler("set_provider", set_provider_command))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, communicate))
     application.run_polling()
 
